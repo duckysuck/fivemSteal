@@ -33,7 +33,7 @@ Citizen.CreateThread(function()
 
 		if IsControlJustPressed(1, Keys["E"]) and IsControlPressed(1, Keys["LEFTCTRL"]) and IsPedArmed(ped, 7) and not IsEntityDead(ped) and not IsPedInAnyVehicle(ped, true) then
 			if CheckIsPedDead() then  
-				exports['mythic_notify']:DoCustomHudText('error', 'esta muerto la victima.',4000)
+				exports['mythic_notify']:DoCustomHudText('error', 'The victim is dead!',4000)
 	 
 		else
 		  robo()
@@ -64,7 +64,7 @@ function robo()
 		             TriggerServerEvent('robo:jugador', target_id, playerheading, playerCoords, playerlocation)
 					  Citizen.Wait(4500)
 				else
-				exports['mythic_notify']:DoCustomHudText('error', 'no esta alzando las manos.')	
+				exports['mythic_notify']:DoCustomHudText('error', 'They are not raising their hands.')	
 
 				end
 
@@ -72,7 +72,7 @@ function robo()
 
 						
 		 else
-		 exports['mythic_notify']:DoCustomHudText('error', 'no hay jugadores cerca')
+		 exports['mythic_notify']:DoCustomHudText('error', 'no one nearby')
          end	  	  
 	
 
@@ -112,7 +112,7 @@ AddEventHandler('robo:doarrested', function()
 	Citizen.Wait(250)
 	loadanimdict('combat@aim_variations@arrest')
 	TaskPlayAnim(GetPlayerPed(-1), 'combat@aim_variations@arrest', 'cop_med_arrest_01', 8.0, -8,3750, 2, 0, 0, 0, 0)
-	exports['progressBars']:startUI(3500, " Buscando Objetos ")	
+	exports['progressBars']:startUI(3500, "  Searching for items  ")	
 	Citizen.Wait(3000)
 	OpenBodySearchMenu(target)
 end) 
